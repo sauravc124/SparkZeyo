@@ -25,7 +25,7 @@ object SparkObj {
 					val rdd = sc.parallelize(List(result))
 					rdd.foreach(println)
 
-					println("---------------- Raw dataframe -------------------------")
+					println("---------------- Raw Json dataframe -------------------------")
 					val df = spark.read.json(rdd)
 					df.show()
 					df.printSchema()
@@ -72,7 +72,7 @@ object SparkObj {
 					println("============ Count of final flattened dataframes =====================")
 					println(finaldf.count())
 
-					println("==================== Reverted dataframe =================================")
+					println("==================== Final Reverted dataframe =================================")
 					val complexdf1 =  finaldf.select (
 
 							col("nationality"),
